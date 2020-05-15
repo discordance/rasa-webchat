@@ -118,6 +118,8 @@ class Widget extends Component {
 
   forceInit() {
     const { dispatch } = this.props;
+    dispatch(pullSession());
+    this.initializeWidget(false);
     dispatch(initialize());
     console.log('forced re-init');
   }
