@@ -116,12 +116,12 @@ class Widget extends Component {
     return localId;
   }
 
+  // hacky
   forceInit() {
     const { dispatch } = this.props;
     dispatch(pullSession());
     this.initializeWidget(false);
     dispatch(initialize());
-    console.log('forced re-init');
   }
 
   sendMessage(payload, text = '', when = 'always') {
