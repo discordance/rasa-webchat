@@ -116,11 +116,11 @@ class Widget extends Component {
     return localId;
   }
 
-  forceInit() {
-    const { dispatch } = this.props;
-    dispatch(initialize());
-    console.log('forced re-init');
-  }
+  // forceInit() {
+  //   const { dispatch } = this.props;
+  //   dispatch(initialize());
+  //   console.log('forced re-init');
+  // }
 
   sendMessage(payload, text = '', when = 'always') {
     const { dispatch, initialized } = this.props;
