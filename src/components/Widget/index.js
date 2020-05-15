@@ -116,12 +116,17 @@ class Widget extends Component {
     return localId;
   }
 
-  // hacky
+  // found a way to clear
   forceInit() {
     const { dispatch } = this.props;
     dispatch(pullSession());
     this.initializeWidget(false);
     dispatch(initialize());
+  }
+
+  // could be useful
+  addMessage(message) {
+    this.messages.push(message);
   }
 
   sendMessage(payload, text = '', when = 'always') {
