@@ -126,7 +126,9 @@ class Widget extends Component {
 
   // could be useful
   addMessage(message) {
-    this.messages.push(message);
+    this.onGoingMessageDelay = true;
+    dispatch(triggerMessageDelayed(true));
+    this.newMessageTimeout(message);
   }
 
   sendMessage(payload, text = '', when = 'always') {
